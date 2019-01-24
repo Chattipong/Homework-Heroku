@@ -33,7 +33,7 @@ gem 'paranoia', '~> 2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'sqlite3'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -61,6 +61,12 @@ group :development, :test do
   gem 'rspec-retry'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem'pg','0.18.1'
+  gem 'rails_12factor'
 end
 
 group :development do
