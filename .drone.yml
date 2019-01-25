@@ -30,19 +30,19 @@ pipeline:
     commands:
       - /bin/bash deploy.drone.sh
     when:
-      branch: develop
+      branch: master
     secrets: [ HEROKU_API_KEY, HEROKU_LOGIN, HEROKU_GIT_URL ]
-  notify:
-    image: drillster/drone-email
-    from: noreply-drone@bananacoding.com
-    host: $EMAIL_HOST
-    username: $EMAIL_USERNAME
-    password: $EMAIL_PASSWORD
-    recipients:
-      - kraiwut@bananacoding.com
-    secrets: [ EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD ]
-    when:
-        status: [ success, failure ]
+  # notify:
+  #   image: drillster/drone-email
+  #   from: noreply-drone@bananacoding.com
+  #   host: $EMAIL_HOST
+  #   username: $EMAIL_USERNAME
+  #   password: $EMAIL_PASSWORD
+  #   recipients:
+  #     - kraiwut@bananacoding.com
+  #   secrets: [ EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD ]
+  #   when:
+  #       status: [ success, failure ]
 services:
   database:
     image: postgres
