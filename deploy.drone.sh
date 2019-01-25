@@ -34,8 +34,8 @@ machine git.heroku.com
 EOF
 
 echo "Deploying site to Heroku"
-git checkout develop
-git push -f heroku develop:master
+# git checkout develop
+git push -f heroku master
 git remote remove heroku
 
 exit 0
